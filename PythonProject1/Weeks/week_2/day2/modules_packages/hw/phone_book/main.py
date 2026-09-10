@@ -1,9 +1,11 @@
-from utils import read_json_book,safe_to_json,get_name_phone
+from utils import read_json_book, safe_to_json, get_name_phone
+
 
 def add_contact(name, number):
     ph_book = read_json_book()
     ph_book[name] = number
     safe_to_json(ph_book)
+
 
 def find_contact():
     searchable_contact = {}
@@ -13,6 +15,7 @@ def find_contact():
         if name.lower() == key.lower():
             searchable_contact[key] = json_phone_book[key]
     return searchable_contact
+
 
 def main():
     flag = True
@@ -38,6 +41,10 @@ def main():
             break
         else:
             print("введено некорректное значение. попробуйте еще раз.")
+
+
+def delete_contact():
+    print("delete_contact")
 
 if __name__ == '__main__':
     main()
