@@ -1,0 +1,37 @@
+[
+    {
+        "title": "1984",
+        "author": "Orwell",
+        "year": 1949,
+        "genre": "dystopia",
+        "read": true
+    },
+    {
+        "title": "BAC",
+        "author": "O.G.Grand",
+        "year": 2008,
+        "genre": "phisics",
+        "read": false
+    },
+    {
+        "title": "Тестовая",
+        "author": "Авторска",
+        "year": 1222,
+        "genre": "незнаю",
+        "read": true
+    },
+    {
+        "title": "первая",
+        "author": "автор",
+        "year": 1291,
+        "genre": "чушь",
+        "read": true
+    },
+    {
+        "title": "еще",
+        "author": "ра",
+        "year": 323,
+        "genre": "ппп",
+        "read": false
+    }
+]
