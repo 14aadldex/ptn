@@ -1,4 +1,5 @@
 from utils import read_json_book, safe_to_json, get_name_phone
+#испортируем функции из другого файла, сначла название файла, потом перечень
 
 
 def add_contact(name, number):
@@ -42,7 +43,7 @@ def main():
         else:
             print("введено некорректное значение. попробуйте еще раз.")
 
-
+#test git diff
 def delete_contact():
     print("delete_contact")
 

@@ -1,0 +1,72 @@
+Задача: «Менеджер личной библиотеки»
+
+Консольное приложение, которое хранит книги в JSON-файле и умеет с ними работать.
+
+Требования
+
+Функционал (меню в цикле):
+
+1. Добавить книгу (название, автор, год, жанр)
+2. Показать все книги
+3. Найти книги по автору
+4. Отметить книгу как прочитанную
+5. Показать статистику (сколько всего, сколько прочитано, средний год)
+6. Удалить книгу
+7. Выход
+
+Технические требования (это и есть «структурирование»):
+
+· Код разбит минимум на 2 файла: main.py (меню + цикл) и storage.py (работа с файлом), плюс по желанию logic.py (фильтрация, статистика).
+· Каждая операция — отдельная функция с return, а не print внутри логики.
+· try/except на:
+  · ввод года (пользователь может написать «abc»),
+  · чтение/запись JSON (файла может не быть, или он битый),
+  · ввод пункта меню.
+· Данные в JSON — список словарей:
+  ```json
+  [
+    {"title": "1984", "author": "Orwell", "year": 1949, "genre": "dystopia", "read": false}
+  ]
+  ```
+· Никаких глобальных переменных — данные передаются через аргументы и возвращаются.
+
+Пример структуры
+
+```
+library/
+├── main.py
+├── storage.py
+├── logic.py
+└── books.json
+```
+
+storage.py — только ввод/вывод:
+
+```python
+def load_books(path): ...
+def save_books(path, books): ...
+```
+
+logic.py — чистая логика без print:
+
+```python
+def add_book(books, title, author, year, genre): ...
+def find_by_author(books, author): ...
+def mark_as_read(books, title): ...
+def get_stats(books): ...  # возвращает словарь, не печатает
+def delete_book(books, title): ...
+```
+
+main.py — интерфейс:
+
+```python
+from storage import load_books, save_books
+from logic import add_book, find_by_author, get_stats
+
+def show_menu(): ...
+def get_year_input(): ...  # здесь try/except на int()
+def main():
+    books = load_books("books.json")
+    while True:
+        ...
+```
